@@ -1,19 +1,17 @@
-/*.content{*/
-/*width: 100%;*/
-/*}*/
-/*.content h1{*/
-/*text-align: center;*/
-/*}*/
-/*.quarter{*/
-/*margin-left: 50px;*/
-/*}*/
-/*.month {*/
-/*width: 150px;*/
-/*margin: 0px 250px;*/
-/*border: 1px solid blue;*/
-/*background-color: red;*/
-/*}*/
-/*.month h3 {*/
-/*text-align: center;*/
-/*padding: 5px;*/
-/*}*/
+#wrapper {
+  border: 1px solid;
+  float: left;
+  width: 590px; }
+
+h2 {
+  float: left;
+  margin: 20px;
+  width: 100%; }
+
+.month {
+  float: left;
+  height: 147px;
+  margin: 20px; }
+
+h1 {
+  text-align: center; }
