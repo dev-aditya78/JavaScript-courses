@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <style>
+    body { font: 12px Consolas;}
+  </style>
+
+<!--  <script type="text/javascript">
+
+//DESCRIPTION
+    var myYear=2011;
+    var daysOfWeek='Su|Mn|Tu|Wd|Th|Fr|St'.split('|');
+    var startIdent = 20 , cellMargin = 10;
+    var cellSize = getWeekHeader ().length;
+
+//YEAR
+    function genYearHeaderLine(){
+      return genSpace( startIdent + (1.5*cellSize) + cellMargin -2) + myYear;
+    }
+
+//SPACE
+    function genSpace(spaceCount){
+      var spaceString ="";
+      for (var i=0;i<spaceCount;i++){
+        spaceString+= '&nbsp';
+      };
+      return spaceString;
+    };
+
+//BRAKE
+    function writeBr (numberOfBrake){
+      var numberOfBrake = numberOfBrake || 1;
+      for (var i = 0 ; i < numberOfBrake ; i++ )
+        document.write('</br>');
+    }
+
+//HEADER of Week
+    function getWeekHeader (){
+      return '|  '+ daysOfWeek.join('  |  ') + '  |';
+    }
+
+//ALL Headers of Weeks from 1 line
+    function genWeekHeaderLine () {
+      var result ='';
+      result += genSpace (startIdent);
+      for (var i = 0 ; i< 3 ; i++){
+        result += getWeekHeader();
+        result += genSpace(cellMargin);
+      }
+      return result;
+    }
+
+//ALL Line Content of some week
+    function getWeekLine  (){
+      var result ='';
+      result += genSpace (startIdent);
+      for (var i = 0 ; i< 3 ; i++){
+        result += getWeek();
+        result += genSpace(cellMargin);
+      }
+      return result;
+    }
+
+//OUTPUT All Line Content of some week
+    for (var i = 0 ; i<6 ; i++){
+      writeBr ();
+      document.write(getWeekLine());
+    }
+
+
+//NOT COMPLITE
+//DEFINING of Week
+    function getWeek (numberOfWeek, numberOfMonth){
+      var daysOfWeek = (genSpace(2)+'|'+genSpace(2)+'|01|02|03|04|05').split('|');
+
+      return '|  '+ daysOfWeek.join('  |  ') + '  |'
+    };
+
+
+//OUTPUT
+    document.write( genYearHeaderLine());
+    writeBr (3);
+    document.write( genWeekHeaderLine() );
+
+
+
+
+  </script> -->
+  <meta charset="UTF-8">
+  <title>Calendar</title>
+  <link href="../StaticCalendar/css/style.css" rel="stylesheet">
+</head>
+<body>
+  <div class="content">
+    <h1>2011</h1>
+
+    <div class="quarter">
+      <h2>WINTER</h2>
+    </div>
+
+    <div class="month">
+      <h3>Desember</h3>
+    </div>
+    
+  </div>
+</body>
+</html>
