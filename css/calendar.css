@@ -1,0 +1,56 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Users\/mivankiv\/projects\/Calendar\/scss\/calendar\.scss}line{font-family:\000031}}
+html, body {
+  font: 12px Calibri; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Users\/mivankiv\/projects\/Calendar\/scss\/calendar\.scss}line{font-family:\000032}}
+* {
+  margin: 0;
+  padding: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Users\/mivankiv\/projects\/Calendar\/scss\/calendar\.scss}line{font-family:\000034}}
+#wrapper {
+  margin: 20px;
+  float: left;
+  position: absolute; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Users\/mivankiv\/projects\/Calendar\/scss\/calendar\.scss}line{font-family:\000036}}
+.calendar {
+  width: 834px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Users\/mivankiv\/projects\/Calendar\/scss\/calendar\.scss}line{font-family:\0000316}}
+  .calendar h1 {
+    text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Users\/mivankiv\/projects\/Calendar\/scss\/calendar\.scss}line{font-family:\0000317}}
+  .calendar h3 {
+    font: 12px Calibri;
+    text-align: center; }
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Users\/mivankiv\/projects\/Calendar\/scss\/calendar\.scss}line{font-family:\0000319}}
+  .calendar .month {
+    width: 238px;
+    float: left;
+    margin: 20px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Users\/mivankiv\/projects\/Calendar\/scss\/calendar\.scss}line{font-family:\0000321}}
+  .calendar .month:nth-child(2) {
+    margin-left: 298px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Users\/mivankiv\/projects\/Calendar\/scss\/calendar\.scss}line{font-family:\0000322}}
+  .calendar .month ul {
+    display: block; }
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Users\/mivankiv\/projects\/Calendar\/scss\/calendar\.scss}line{font-family:\0000327}}
+  .calendar .month ul.monthHeader li:nth-child(6),
+  .calendar .month ul.monthHeader li:last-child {
+    color: red;
+    background-color: transparent; }
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Users\/mivankiv\/projects\/Calendar\/scss\/calendar\.scss}line{font-family:\0000329}}
+  .calendar .month ul li {
+    display: block;
+    list-style: none;
+    float: left;
+    width: 30px;
+    text-align: center;
+    margin: 2px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Users\/mivankiv\/projects\/Calendar\/scss\/calendar\.scss}line{font-family:\0000331}}
+  .calendar .month ul li:nth-child(7n),
+  .calendar .month ul li:nth-child(7n-1) {
+    background-color: #ffe5e5; }
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Users\/mivankiv\/projects\/Calendar\/scss\/calendar\.scss}line{font-family:\0000333}}
+  .calendar .month ul li.out {
+    color: #cccccc; }
