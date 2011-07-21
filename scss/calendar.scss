@@ -1,0 +1,34 @@
+html, body { font: 12px Calibri;}
+* {margin:0; padding:0;}
+
+#wrapper {margin: 20px; float:left; position: absolute; }
+
+.calendar {
+  $cell-width : 30px;
+  $cell-margin: 2px;
+
+  $month-width: $cell-width*7 + $cell-margin *14 ;
+  $month-margin: 20px;
+  $calendar-width: $month-width*3 + $month-margin*6;
+
+  width: $calendar-width;
+
+  h1 {text-align: center;}
+  h3 {font: 12px Calibri; text-align:center;}
+
+  .month                  { width: $month-width; float:left; margin: $month-margin;}
+
+  .month:nth-child(2)     { margin-left:$month-width+$month-margin*3; }
+  .month ul               { display:block}
+  .month ul.monthHeader   {}
+
+  .month ul.monthHeader li                {}
+  .month ul.monthHeader li:nth-child(6),
+  .month ul.monthHeader li:last-child     { color: red; background-color:transparent;}
+
+  .month ul li                 { display:block; list-style:none; float: left; width: $cell-width; text-align: center; margin:$cell-margin;}
+  .month ul li:nth-child(7n),
+  .month ul li:nth-child(7n-1) { background-color: #ffe5e5;}
+
+  .month ul li.out        { color: #cccccc; }
+}
