@@ -6,8 +6,9 @@
  * Brief description of functionality.
  */
 var calendarConfig = {
-  weekArray  : 'Пн,Вт,Ср,Чт,Пт,Сб,Нд'.split(','),
+  weekArray  : 'Нд,Пн,Вт,Ср,Чт,Пт,Сб'.split(','),
   monthArray : "Січень, Лютий, Березень, Квітень, Травень, Червень, Липень, Серпень, Вересень ,Жовтень, Листопад, Грудень ".split(','),
   year       : 2011,
-  container  : document.getElementById('wrapper')
+  container  : document.getElementById('wrapper'),
+  startDay   : 1  // 0 - Sunday;
 }
