@@ -62,9 +62,30 @@ var Calendar = function(initObj){
     return month;
   };
 
+  function setNextYear (){
+    this_.setYear(this_.year+1);
+  }
+  function setPrevYear (){
+    this_.setYear(this_.year-1);
+  }
+
   function drawCalendarHeader_ (){
     var header = document.createElement('H1');
         header.innerHTML = this_.year;
+
+    var prevYear = document.createElement("span");
+        prevYear.className = "control";
+        prevYear.innerHTML = "&lt;";
+        prevYear.addEventListener('click',setPrevYear,false);
+
+    var nextYear = document.createElement("span");
+        nextYear.className = "control";
+        nextYear.innerHTML = "&gt;";
+        nextYear.addEventListener('click',setNextYear,false);
+
+    header.insertBefore ( prevYear, header.firstChild );
+    header.appendChild  ( nextYear, header.firstChild );
+
     this_.container.appendChild(header);
   }
 

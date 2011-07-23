@@ -1,7 +1,7 @@
-html, body { font: 12px Calibri;}
+html, body { font: 12px Calibri; height: 100%; width: 100%;}
 * {margin:0; padding:0;}
 
-#wrapper {margin: 20px; float:left; position: absolute; }
+#wrapper {}
 
 .calendar {
   $cell-width : 30px;
@@ -11,7 +11,7 @@ html, body { font: 12px Calibri;}
   $month-margin: 20px;
   $calendar-width: $month-width*3 + $month-margin*6;
 
-  width: $calendar-width;
+  width: $calendar-width; margin: 20px auto;
 
   h1 {text-align: center;}
   h3 {font: 12px Calibri; text-align:center;}
@@ -31,4 +31,6 @@ html, body { font: 12px Calibri;}
   .month ul li:nth-child(7n-1) { background-color: #ffe5e5;}
 
   .month ul li.out        { color: #cccccc; }
+
+  .control  {margin: 20px; color: WHITE; text-shadow: 0 0 1px black; cursor: pointer;}
 }
