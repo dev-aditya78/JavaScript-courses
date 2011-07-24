@@ -9,35 +9,42 @@ html, body {
   margin: 0;
   padding: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Users\/neformal\/projects\/JavaScript-courses\/scss\/calendar\.scss}line{font-family:\000036}}
-.calendar {
-  width: 834px;
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Users\/neformal\/projects\/JavaScript-courses\/scss\/calendar\.scss}line{font-family:\000034}}
+#wrapper {
   margin: 20px auto; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Users\/neformal\/projects\/JavaScript-courses\/scss\/calendar\.scss}line{font-family:\0000311}}
+.calendar, .compact-calendar {
+  width: 834px;
+  overflow: hidden;
+  height: 1010px;
+  position: relative; }
 @media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Users\/neformal\/projects\/JavaScript-courses\/scss\/calendar\.scss}line{font-family:\0000316}}
-  .calendar h1 {
+  .calendar h1, .compact-calendar h1 {
     text-align: center; }
 @media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Users\/neformal\/projects\/JavaScript-courses\/scss\/calendar\.scss}line{font-family:\0000317}}
-  .calendar h3 {
+  .calendar h3, .compact-calendar h3 {
     font: 12px Calibri;
     text-align: center; }
 @media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Users\/neformal\/projects\/JavaScript-courses\/scss\/calendar\.scss}line{font-family:\0000319}}
-  .calendar .month {
+  .calendar .month, .compact-calendar .month {
     width: 238px;
     float: left;
     margin: 20px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Users\/neformal\/projects\/JavaScript-courses\/scss\/calendar\.scss}line{font-family:\0000321}}
-  .calendar .month:nth-child(2) {
+  .calendar .month:nth-child(2), .compact-calendar .month:nth-child(2) {
     margin-left: 298px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Users\/neformal\/projects\/JavaScript-courses\/scss\/calendar\.scss}line{font-family:\0000322}}
-  .calendar .month ul {
+  .calendar .month ul, .compact-calendar .month ul {
     display: block; }
 @media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Users\/neformal\/projects\/JavaScript-courses\/scss\/calendar\.scss}line{font-family:\0000327}}
-  .calendar .month ul.monthHeader li:nth-child(6),
-  .calendar .month ul.monthHeader li:last-child {
+  .calendar .month ul.monthHeader li:nth-child(6), .compact-calendar .month ul.monthHeader li:nth-child(6),
+  .calendar .month ul.monthHeader li:last-child,
+  .compact-calendar .month ul.monthHeader li:last-child {
     color: red;
     background-color: transparent; }
 @media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Users\/neformal\/projects\/JavaScript-courses\/scss\/calendar\.scss}line{font-family:\0000329}}
-  .calendar .month ul li {
+  .calendar .month ul li, .compact-calendar .month ul li {
     display: block;
     list-style: none;
     float: left;
@@ -45,15 +52,52 @@ html, body {
     text-align: center;
     margin: 2px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Users\/neformal\/projects\/JavaScript-courses\/scss\/calendar\.scss}line{font-family:\0000331}}
-  .calendar .month ul li:nth-child(7n),
-  .calendar .month ul li:nth-child(7n-1) {
+  .calendar .month ul li:nth-child(7n), .compact-calendar .month ul li:nth-child(7n),
+  .calendar .month ul li:nth-child(7n-1),
+  .compact-calendar .month ul li:nth-child(7n-1) {
     background-color: #ffe5e5; }
 @media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Users\/neformal\/projects\/JavaScript-courses\/scss\/calendar\.scss}line{font-family:\0000333}}
-  .calendar .month ul li.out {
+  .calendar .month ul li.out, .compact-calendar .month ul li.out {
     color: #cccccc; }
 @media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Users\/neformal\/projects\/JavaScript-courses\/scss\/calendar\.scss}line{font-family:\0000335}}
-  .calendar .control {
+  .calendar .control, .compact-calendar .control {
     margin: 20px;
-    color: WHITE;
-    text-shadow: 0 0 1px black;
+    color: White;
+    text-shadow: 0 0 4px black;
     cursor: pointer; }
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Users\/neformal\/projects\/JavaScript-courses\/scss\/calendar\.scss}line{font-family:\0000336}}
+  .calendar .switch-size, .compact-calendar .switch-size {
+    margin: 9px 25px 0 0;
+    position: absolute;
+    right: 0;
+    top: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Users\/neformal\/projects\/JavaScript-courses\/scss\/calendar\.scss}line{font-family:\0000338}}
+  .calendar .switch-next-month, .compact-calendar .switch-next-month {
+    display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Users\/neformal\/projects\/JavaScript-courses\/scss\/calendar\.scss}line{font-family:\0000339}}
+  .calendar .switch-prev-month, .compact-calendar .switch-prev-month {
+    display: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Users\/neformal\/projects\/JavaScript-courses\/scss\/calendar\.scss}line{font-family:\0000342}}
+.compact-calendar {
+  width: 278px;
+  height: 220px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Users\/neformal\/projects\/JavaScript-courses\/scss\/calendar\.scss}line{font-family:\0000348}}
+  .compact-calendar .month {
+    display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Users\/neformal\/projects\/JavaScript-courses\/scss\/calendar\.scss}line{font-family:\0000349}}
+  .compact-calendar .month:nth-child(2) {
+    margin-left: 20px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Users\/neformal\/projects\/JavaScript-courses\/scss\/calendar\.scss}line{font-family:\0000352}}
+  .compact-calendar .switch-next-month,
+  .compact-calendar .switch-prev-month {
+    display: block;
+    position: absolute;
+    top: 25px;
+    font-size: 15px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Users\/neformal\/projects\/JavaScript-courses\/scss\/calendar\.scss}line{font-family:\0000354}}
+  .compact-calendar .switch-next-month {
+    right: -10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Users\/neformal\/projects\/JavaScript-courses\/scss\/calendar\.scss}line{font-family:\0000355}}
+  .compact-calendar .switch-prev-month {
+    left: -10px; }

@@ -14,13 +14,86 @@ var Calendar = function(initObj){
     drawCalendar ();
   }
 
+  this.setMonth = function (newMonth){
+    if (newMonth < 0) {
+      this_.month = 12 + newMonth;
+      setPrevYear();
+      return;
+    }
+    if (newMonth > 11) {
+      this_.month = 12 - newMonth;
+      setNextYear();
+      return;
+    }
+    this_.container.getElementsByClassName('month')[this_.month].style.display="";
+    this_.month = newMonth;
+    this_.container.getElementsByClassName('month')[this_.month].style.display="block";
+  }
+
+  this.switchSize = function(){
+    if (this_.isExpanded){
+      this_.isExpanded = false;
+      this_.container.className = "compact-calendar";
+    } else {
+      this_.isExpanded = true;
+      this_.container.className = "calendar";
+    }
+  }
+
   function  drawCalendar () {
     drawCalendarHeader_ ();
     for (var i=0; i< 12 ;i++) {drawMonth_ (i);}
+
+    addSwitchSizeControl();
+    addSwitchMonthControl();
+    addSwitchYearControl();
+  }
+
+  function addSwitchSizeControl(){
+    var switchSizeControl = document.createElement('div');
+        switchSizeControl.className = "control switch-size";
+        switchSizeControl.innerHTML = "switch";
+        switchSizeControl.addEventListener('click',this_.switchSize,false);
+    this_.container.appendChild(switchSizeControl);
+  }
+
+  function addSwitchMonthControl(){
+    var prevMonth = document.createElement("span");
+        prevMonth.className = "control switch-prev-month";
+        prevMonth.innerHTML = "&lt;";
+        prevMonth.addEventListener('click',setPrevMonth,false);
+
+    var nextMonth = document.createElement("span");
+        nextMonth.className = "control switch-next-month";
+        nextMonth.innerHTML = "&gt;";
+        nextMonth.addEventListener('click',setNextMonth,false);
+
+    this_.container.appendChild(nextMonth);
+    this_.container.appendChild(prevMonth);
+  }
+
+  function addSwitchYearControl (){
+    var header = this_.container.getElementsByTagName('H1')[0];
+    var prevYear = document.createElement("span");
+        prevYear.className = "control";
+        prevYear.innerHTML = "&lt;";
+        prevYear.addEventListener('click',setPrevYear,false);
+
+    var nextYear = document.createElement("span");
+        nextYear.className = "control";
+        nextYear.innerHTML = "&gt;";
+        nextYear.addEventListener('click',setNextYear,false);
+
+    header.insertBefore ( prevYear, header.firstChild );
+    header.appendChild  ( nextYear, header.firstChild );
   }
 
   function drawMonth_ (numberOfMonth){
     var monthContainer = document.createElement('div');
+    if (numberOfMonth == this_.month){
+      monthContainer.style.display = "block";
+    }
+
     monthContainer.appendChild(generateMonthHeader_(numberOfMonth));
     monthContainer.appendChild(generateWeekHeader_ ());
     monthContainer.appendChild(generateMonth_(numberOfMonth));
@@ -62,29 +135,15 @@ var Calendar = function(initObj){
     return month;
   };
 
-  function setNextYear (){
-    this_.setYear(this_.year+1);
-  }
-  function setPrevYear (){
-    this_.setYear(this_.year-1);
-  }
+  function setPrevMonth() { this_.setMonth(this_.month-1); }
+  function setNextMonth() { this_.setMonth(this_.month+1); }
+
+  function setNextYear () { this_.setYear(this_.year+1); }
+  function setPrevYear () { this_.setYear(this_.year-1); }
 
   function drawCalendarHeader_ (){
     var header = document.createElement('H1');
         header.innerHTML = this_.year;
-
-    var prevYear = document.createElement("span");
-        prevYear.className = "control";
-        prevYear.innerHTML = "&lt;";
-        prevYear.addEventListener('click',setPrevYear,false);
-
-    var nextYear = document.createElement("span");
-        nextYear.className = "control";
-        nextYear.innerHTML = "&gt;";
-        nextYear.addEventListener('click',setNextYear,false);
-
-    header.insertBefore ( prevYear, header.firstChild );
-    header.appendChild  ( nextYear, header.firstChild );
 
     this_.container.appendChild(header);
   }
@@ -96,5 +155,9 @@ var Calendar = function(initObj){
   }
 
   drawCalendar();
+
+  //Set class
+  if (this_.isExpanded) {this_.container.className = "calendar"}
+  else {this_.container.className = "compact-calendar";}
 }
 Calendar.prototype = calendarConfig;

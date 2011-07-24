@@ -1,24 +1,24 @@
 html, body { font: 12px Calibri; height: 100%; width: 100%;}
 * {margin:0; padding:0;}
 
-#wrapper {}
+#wrapper { margin: 20px auto;}
+
+$cell-width : 30px;
+$cell-margin: 2px;
+$month-margin: 20px;
+$month-width: $cell-width*7 + $cell-margin *14 ;
 
 .calendar {
-  $cell-width : 30px;
-  $cell-margin: 2px;
-
-  $month-width: $cell-width*7 + $cell-margin *14 ;
-  $month-margin: 20px;
   $calendar-width: $month-width*3 + $month-margin*6;
 
-  width: $calendar-width; margin: 20px auto;
+  width: $calendar-width; overflow:hidden; height: 1010px; position: relative;
 
   h1 {text-align: center;}
   h3 {font: 12px Calibri; text-align:center;}
 
   .month                  { width: $month-width; float:left; margin: $month-margin;}
 
-  .month:nth-child(2)     { margin-left:$month-width+$month-margin*3; }
+  .month:nth-child(2)     { margin-left:$month-width+$month-margin*3;}
   .month ul               { display:block}
   .month ul.monthHeader   {}
 
@@ -32,5 +32,25 @@ html, body { font: 12px Calibri; height: 100%; width: 100%;}
 
   .month ul li.out        { color: #cccccc; }
 
-  .control  {margin: 20px; color: WHITE; text-shadow: 0 0 1px black; cursor: pointer;}
+  .control     { margin: 20px; color: White; text-shadow: 0 0 4px black; cursor: pointer;}
+  .switch-size { margin: 9px 25px 0 0; position: absolute; right: 0; top: 0;}
+
+  .switch-next-month {display: none;}
+  .switch-prev-month {display: none;}
+}
+
+.compact-calendar {
+  @extend .calendar;
+  $calendar-width: $month-width + $month-margin*2;
+
+  width: $calendar-width; height: 220px;
+
+  .month                 { display: none;}
+  .month:nth-child(2)    { margin-left:$month-margin;}
+
+  .switch-next-month ,
+  .switch-prev-month {display: block;position: absolute;   top: 25px; font-size: 15px;}
+
+  .switch-next-month { right: -10px }
+  .switch-prev-month {left: -10px;}
 }
