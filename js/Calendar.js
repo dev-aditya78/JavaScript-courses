@@ -126,7 +126,7 @@ var Calendar = function(initObj){
       date.setFullYear(this_.year, numberOfMonth, i-beforeDays + this_.startDay);
 
       if (date.getMonth() == numberOfMonth)
-           {dayString += '<li>'+ date.getDate()+'</li>';}
+           {dayString += '<li date="'+ date.toDateString() +'">'+ date.getDate()+'</li>';}
       else
            { dayString += '<li class="out">'+ date.getDate()+'</li>';}
     }
